@@ -7,6 +7,12 @@ namespace hexchallenge
 {
     internal class Program
     {
+        static void validStatments(bool a, bool b, bool c)
+        {
+            Console.WriteLine($"The code starts with a #: {a}");
+            Console.WriteLine($"The length of the code is valid: {b}");
+            Console.WriteLine($"All charecters in the hexcode are valid: {c}");
+        }
         static bool firstChar(string hex) {
             if (hex[0] == '#')
             {
@@ -23,8 +29,7 @@ namespace hexchallenge
                 return true;
             }
             else
-            {
-                return false;
+                { return false;
             }
         }
         static bool charCheck(string hex, char[] hexadecimal)
@@ -67,6 +72,7 @@ namespace hexchallenge
             bool chars = charCheck(Hexcode, hexadecimal);
             while(hash == false || length == false || chars == false) 
             {
+                validStatments(hash, length, chars);
                 Console.WriteLine("Invalid hex code\nPlease enter a hex code for a colour\nThe code must start with a #\nThe number code after the # must be 6 numbers in length");
                 Hexcode = Console.ReadLine().ToUpper();
                 hash = firstChar(Hexcode);
@@ -80,11 +86,9 @@ namespace hexchallenge
             int Green = (valueFinder(3, Hexcode, hexadecimal) * 16) + valueFinder(4, Hexcode, hexadecimal);
             int Blue = (valueFinder(5, Hexcode, hexadecimal) * 16) + valueFinder(6, Hexcode, hexadecimal);
 
-            Console.WriteLine(Hexcode);
-            Console.WriteLine(hash);
-            Console.WriteLine(length);
-            Console.WriteLine(chars);
-            Console.WriteLine($"{Red}, {Green}, {Blue}");
+            Console.WriteLine($"You entered {Hexcode} as your colour code");
+            validStatments(hash, length, chars);
+            Console.WriteLine($"The hexcode you entered is equal to the values of Red - {Red}, Grren - {Green}, Blue - {Blue}");
         }
     }
 }
