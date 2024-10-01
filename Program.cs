@@ -29,7 +29,8 @@ namespace hexchallenge
                 return true;
             }
             else
-                { return false;
+            { 
+                return false;
             }
         }
         static bool charCheck(string hex, char[] hexadecimal)
@@ -70,7 +71,7 @@ namespace hexchallenge
             bool hash = firstChar(Hexcode);
             bool length = lengthCheck(Hexcode);
             bool chars = charCheck(Hexcode, hexadecimal);
-            while(hash == false || length == false || chars == false) 
+            while(!hash||!length||!chars) 
             {
                 validStatments(hash, length, chars);
                 Console.WriteLine("Invalid hex code\nPlease enter a hex code for a colour\nThe code must start with a #\nThe number code after the # must be 6 numbers in length");
