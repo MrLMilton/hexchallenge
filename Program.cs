@@ -15,7 +15,7 @@ namespace hexchallenge
         }
         static bool firstChar(string hex)
         { //Mark E ,Mark I
-            if (hex[0] == '#')
+           if (hex[0] == '#')
             {
                 return true;
             }
@@ -38,7 +38,7 @@ namespace hexchallenge
         {
             bool valid = true;
             bool checks = false;
-            for (int i = 1; i < hex.Length -1; i++)
+            for (int i = 1; i < hex.Length; i++)
             { //Mark L
                 checks = false;//Mark M
                 for (int j = 0; j < 16; j++) {
